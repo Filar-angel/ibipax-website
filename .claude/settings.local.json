@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mv \"Screenshot home page.png\" \"screenshot-home-page.png\")",
+      "Bash(mv \"screenshot Saints stories and calendar .png\" \"screenshot-saints-stories-calendar.png\")",
+      "Bash(mv \"Screenshot Medidate.png\" \"screenshot-meditate.png\")",
+      "Bash(mv \"Screenshot_Ancient prayer.html.png\" \"screenshot-ancient-prayer.png\")",
+      "Bash(mv \"screenshot_sacred_music.html.png\" \"screenshot-sacred-music.png\")",
+      "Bash(ls \"c:/Users/phili/Ascension build/IbiPax/Website/\"*.png)"
+    ]
+  }
+}

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#05070a"/>
+  <title>Privacy Policy — Ibi Pax</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --void:    #05070a;
+      --gold:    #d4af37;
+      --gold-s:  rgba(212,175,55,0.5);
+      --gold-xs: rgba(212,175,55,0.15);
+      --text:    rgba(255,255,255,0.92);
+      --muted:   rgba(255,255,255,0.55);
+      --dim:     rgba(255,255,255,0.25);
+      --stroke:  rgba(255,255,255,0.08);
+      --panel:   rgba(255,255,255,0.04);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--void);
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    /* Background */
+    .bg-photo {
+      position: fixed; inset: 0; z-index: -2;
+      background: url('milkyway_bg.png') center center / cover no-repeat;
+    }
+    .bg-overlay {
+      position: fixed; inset: 0; z-index: -1;
+      background: rgba(5,7,10,0.82);
+    }
+
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--void); }
+    ::-webkit-scrollbar-thumb { background: var(--gold-xs); border-radius: 2px; }
+
+    /* Nav */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: rgba(5,7,10,0.90);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--stroke);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem; font-weight: 700;
+      letter-spacing: 0.1em; color: var(--text); text-decoration: none;
+    }
+    .nav-logo .pax { font-style: italic; color: var(--gold); }
+    .nav-back {
+      font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none; transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--gold); }
+
+    /* Page layout */
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 9rem 2rem 6rem;
+    }
+
+    /* Header */
+    .page-eyebrow {
+      display: block;
+      font-size: 0.70rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1rem;
+    }
+    .page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 400; line-height: 1.2;
+      color: var(--text); margin-bottom: 0.75rem;
+    }
+    .page-meta {
+      font-size: 0.80rem; color: var(--muted);
+      letter-spacing: 0.05em; margin-bottom: 3rem;
+    }
+    .gold-rule {
+      width: 40px; height: 1px;
+      background: var(--gold-s); margin-bottom: 3rem;
+    }
+
+    /* Sections */
+    .policy-section {
+      background: var(--panel);
+      border: 1px solid var(--stroke);
+      border-radius: 14px;
+      padding: 2rem 2.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem; font-weight: 400;
+      color: var(--text); margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--stroke);
+    }
+
+    h3 {
+      font-size: 0.88rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--gold); margin: 1.5rem 0 0.5rem;
+    }
+    h3:first-of-type { margin-top: 0.5rem; }
+
+    p {
+      font-size: 0.94rem; color: var(--muted);
+      margin-bottom: 0.85rem; line-height: 1.85;
+    }
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      margin: 0.5rem 0 0.85rem 1.25rem;
+      color: var(--muted); font-size: 0.94rem;
+    }
+    ul li { margin-bottom: 0.4rem; line-height: 1.75; }
+
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    strong { color: var(--text); font-weight: 500; }
+
+    /* Highlight box */
+    .highlight {
+      background: var(--gold-xs);
+      border-left: 2px solid var(--gold-s);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      font-size: 0.90rem;
+      color: rgba(255,255,255,0.70);
+      line-height: 1.75;
+    }
+
+    /* Contact block */
+    .contact-block {
+      background: var(--gold-xs);
+      border: 1px solid var(--gold-s);
+      border-radius: 14px;
+      padding: 1.75rem 2.25rem;
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+    .contact-block p { color: rgba(255,255,255,0.65); margin-bottom: 0.4rem; }
+    .contact-block a { color: var(--gold); font-size: 1rem; font-weight: 500; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      border-top: 1px solid var(--stroke);
+      margin-top: 3rem;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem; font-weight: 700;
+      letter-spacing: 0.1em; color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    .footer-logo .pax { font-style: italic; color: var(--gold); }
+    .footer-copy { font-size: 0.75rem; color: var(--dim); margin-top: 1rem; }
+
+    @media (max-width: 600px) {
+      nav { padding: 1rem 1.5rem; }
+      .policy-section { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-photo" aria-hidden="true"></div>
+  <div class="bg-overlay" aria-hidden="true"></div>
+
+  <nav>
+    <a class="nav-logo" href="index.html">Ibi <span class="pax">Pax</span></a>
+    <a class="nav-back" href="index.html">← Back to Home</a>
+  </nav>
+
+  <main class="page">
+
+    <span class="page-eyebrow">Legal</span>
+    <h1 class="page-title">Privacy Policy</h1>
+    <p class="page-meta">Effective Date: March 28, 2026</p>
+    <div class="gold-rule"></div>
+
+    <div class="highlight">
+      Your privacy matters to us. Ibi Pax is designed to be a peaceful, trustworthy space for your spiritual life. We collect only what is necessary to provide you with the app's features, and we will never sell your personal data.
+    </div>
+
+    <!-- 1. Who we are -->
+    <div class="policy-section">
+      <h2>1. Who We Are</h2>
+      <p>
+        Ibi Pax Ltd. ("we", "our", or "us") is the developer and publisher of the <strong>Ibi Pax</strong> mobile application, available on the Apple App Store and Google Play. Our app is dedicated to helping users discover the spiritual treasures of the Catholic faith through saints, prayers, sacred music, meditations, and spiritual readings.
+      </p>
+      <p>
+        This Privacy Policy explains how we collect, use, store, and protect your personal information when you use our app and website. By using Ibi Pax, you agree to the terms described in this policy.
+      </p>
+    </div>
+
+    <!-- 2. Information we collect -->
+    <div class="policy-section">
+      <h2>2. Information We Collect</h2>
+
+      <h3>Information you provide directly</h3>
+      <ul>
+        <li><strong>Account information:</strong> When you create an account, we collect your email address and password (stored in encrypted form).</li>
+        <li><strong>Profile information:</strong> Any optional name or display name you choose to provide.</li>
+        <li><strong>Communications:</strong> If you contact us for support, we retain that correspondence.</li>
+      </ul>
+
+      <h3>Information collected automatically</h3>
+      <ul>
+        <li><strong>Usage data:</strong> Which features you use (e.g., saints, prayers, meditations), session duration, and navigation patterns — used solely to improve the app experience.</li>
+        <li><strong>Device information:</strong> Device type, operating system version, and app version, to ensure compatibility and diagnose technical issues.</li>
+        <li><strong>Crash reports:</strong> Anonymous crash and error logs to help us fix bugs.</li>
+        <li><strong>Push notification tokens:</strong> If you enable notifications (e.g., Saint of the Day), we store a device token to deliver them.</li>
+      </ul>
+
+      <h3>Information we do NOT collect</h3>
+      <ul>
+        <li>We do not collect your location data.</li>
+        <li>We do not access your contacts, camera, or microphone.</li>
+        <li>We do not collect any financial or payment information directly — purchases are processed entirely by Apple or Google.</li>
+      </ul>
+    </div>
+
+    <!-- 3. How we use your information -->
+    <div class="policy-section">
+      <h2>3. How We Use Your Information</h2>
+      <p>We use the information we collect exclusively to:</p>
+      <ul>
+        <li>Create and manage your account and authenticate your identity.</li>
+        <li>Deliver the app's features, including personalised content and the Saint of the Day notification.</li>
+        <li>Respond to your support requests and communications.</li>
+        <li>Improve, debug, and optimise the performance of the app.</li>
+        <li>Send you important service-related updates (not marketing without your consent).</li>
+        <li>Comply with legal obligations.</li>
+      </ul>
+      <p>
+        We do not use your data for advertising, profiling, or any purpose unrelated to providing and improving the Ibi Pax service.
+      </p>
+    </div>
+
+    <!-- 4. AI Features -->
+    <div class="policy-section">
+      <h2>4. AI-Powered Features (Celestial Guide)</h2>
+      <p>
+        The <strong>Celestial Guide</strong> feature uses an AI language model (powered by Anthropic's Claude API) to respond to your questions about faith, prayer, and the Catholic tradition. Please be aware of the following:
+      </p>
+      <ul>
+        <li>Messages you send to the Celestial Guide are transmitted to Anthropic's servers to generate a response.</li>
+        <li>We advise you not to share sensitive personal information (such as financial details or health information) in conversations with the Celestial Guide.</li>
+        <li>Anthropic processes these messages in accordance with their own <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>.</li>
+        <li>Conversation history may be stored on our servers to maintain context within a session. It is not used to train AI models.</li>
+      </ul>
+    </div>
+
+    <!-- 5. Sharing -->
+    <div class="policy-section">
+      <h2>5. Sharing of Your Information</h2>
+      <p>
+        We do not sell, rent, or trade your personal data. We may share it only in the following limited circumstances:
+      </p>
+      <ul>
+        <li><strong>Service providers:</strong> Trusted third-party providers who help us operate the app (e.g., cloud hosting, authentication, crash reporting). These providers are contractually bound to protect your data.</li>
+        <li><strong>AI provider:</strong> Anthropic, for the Celestial Guide feature (see Section 4).</li>
+        <li><strong>App stores:</strong> Apple and Google process payments and may collect data governed by their own privacy policies.</li>
+        <li><strong>Legal requirements:</strong> If required by law, court order, or to protect our legal rights.</li>
+      </ul>
+    </div>
+
+    <!-- 6. Data retention -->
+    <div class="policy-section">
+      <h2>6. Data Retention</h2>
+      <p>
+        We retain your account data for as long as your account is active, or as needed to provide you with the service. If you delete your account, we will delete your personal data within <strong>30 days</strong>, except where we are required by law to retain it longer.
+      </p>
+      <p>
+        Anonymous usage and crash data may be retained for up to 24 months for analytics and improvement purposes.
+      </p>
+    </div>
+
+    <!-- 7. Your rights -->
+    <div class="policy-section">
+      <h2>7. Your Rights</h2>
+      <p>Depending on your country of residence, you may have the following rights regarding your personal data:</p>
+      <ul>
+        <li><strong>Access:</strong> Request a copy of the personal data we hold about you.</li>
+        <li><strong>Correction:</strong> Request that we correct inaccurate or incomplete data.</li>
+        <li><strong>Deletion:</strong> Request that we delete your account and personal data ("right to be forgotten").</li>
+        <li><strong>Portability:</strong> Request your data in a structured, machine-readable format.</li>
+        <li><strong>Withdraw consent:</strong> Where processing is based on your consent, you may withdraw it at any time.</li>
+        <li><strong>Opt out of notifications:</strong> You can disable push notifications at any time in your device settings.</li>
+      </ul>
+      <p>
+        To exercise any of these rights, please contact us at the address below. We will respond within 30 days.
+      </p>
+    </div>
+
+    <!-- 8. Children -->
+    <div class="policy-section">
+      <h2>8. Age Requirement</h2>
+      <p>
+        Ibi Pax is intended for users who are <strong>13 years of age or older</strong>. By using the app, you confirm that you meet this minimum age requirement. If you reside in the European Union, the GDPR sets the age of digital consent at 16 (or lower depending on your specific country). If you are under the age of digital consent in your jurisdiction, or under the age of 18 generally, you must have the explicit permission of a parent or legal guardian to use the app. We do not knowingly collect personal data from anyone under the age of 13. If you believe a minor under 13 has provided us with personal information, please contact us at <a href="mailto:contact@ibipax.com">contact@ibipax.com</a> and we will promptly delete it.
+      </p>
+    </div>
+
+    <!-- 9. Security -->
+    <div class="policy-section">
+      <h2>9. Data Security</h2>
+      <p>
+        We take the security of your data seriously. We use industry-standard measures including encryption in transit (HTTPS/TLS), encrypted password storage, and access controls to protect your information. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.
+      </p>
+    </div>
+
+    <!-- 10. International -->
+    <div class="policy-section">
+      <h2>10. International Data Transfers</h2>
+      <p>
+        As we offer Ibi Pax globally and use international service providers, your information may be transferred to, stored, or processed in countries other than your own. These countries may have different data protection laws than your country of residence. By using the app, you consent to these transfers, and we take reasonable steps to ensure your data remains protected.
+      </p>
+    </div>
+
+    <!-- 11. Third-party links -->
+    <div class="policy-section">
+      <h2>11. Third-Party Links and Content</h2>
+      <p>
+        The app may contain links to third-party websites or content (such as external books or resources). We are not responsible for the privacy practices of those third parties and encourage you to review their privacy policies.
+      </p>
+    </div>
+
+    <!-- 12. Changes -->
+    <div class="policy-section">
+      <h2>12. Changes to This Policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time. When we make significant changes, we will notify you via the app or by email. The "Last updated" date at the top of this page will always reflect the most recent version. Your continued use of the app after changes are posted constitutes your acceptance of the updated policy.
+      </p>
+    </div>
+
+    <!-- 13. Contact -->
+    <div class="policy-section">
+      <h2>13. Contact Us</h2>
+      <p>If you have any questions, requests, or concerns about this Privacy Policy or how we handle your data, please reach out to us:</p>
+      <div class="contact-block">
+        <p><strong>Ibi Pax</strong></p>
+        <p style="margin-top:0.75rem;">Email: <a href="mailto:contact@ibipax.com">contact@ibipax.com</a></p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-logo">Ibi <span class="pax">Pax</span></div>
+    <p class="footer-copy">© 2026 Ibi Pax Ltd. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

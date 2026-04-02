@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../Ascension build/VS Code build 1902"
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5506,
+		"java.configuration.updateBuildConfiguration": "interactive",
+		"liveServer.settings.multiRootWorkspaceName": "Website"
+	}
+}
