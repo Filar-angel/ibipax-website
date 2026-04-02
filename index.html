@@ -592,6 +592,36 @@
     .footer-links a:hover { color: var(--gold); }
     .footer-copy { font-size: 0.75rem; color: var(--dim); letter-spacing: 0.05em; }
 
+    /* ─── SUBSCRIBE ─── */
+    #subscribe { background: rgba(5, 7, 10, 0.75); text-align: center; padding-top: 4rem; padding-bottom: 4rem; }
+    #subscribe .s-body { margin: 0 auto 1rem; text-align: center; }
+    .subscribe-form {
+      display: flex; justify-content: center; gap: 0.75rem;
+      flex-wrap: wrap; margin-top: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;
+    }
+    .subscribe-form input[type="email"] {
+      flex: 1; min-width: 220px; padding: 0.85rem 1.25rem;
+      font-family: 'Inter', sans-serif; font-size: 0.9rem;
+      background: rgba(255,255,255,0.06); color: var(--text);
+      border: 1px solid var(--stroke); border-radius: 3rem;
+      outline: none; transition: border-color 0.3s;
+    }
+    .subscribe-form input[type="email"]::placeholder { color: var(--dim); }
+    .subscribe-form input[type="email"]:focus { border-color: var(--gold-s); }
+    .subscribe-form button {
+      padding: 0.85rem 2rem; font-family: 'Inter', sans-serif; font-size: 0.8rem;
+      font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+      color: #0a0a0a; background: var(--gold); border: none; border-radius: 3rem;
+      cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .subscribe-form button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(212,175,55,0.3);
+    }
+    .subscribe-msg {
+      margin-top: 1rem; font-size: 0.8rem; color: var(--gold); min-height: 1.2em;
+    }
+
     /* ─── RESPONSIVE ─── */
     /* ─── PLEDGE ─── */
     #pledge {
@@ -1155,6 +1185,25 @@
           <span class="badge-soon">Coming Soon</span>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ── SUBSCRIBE ── -->
+  <section id="subscribe">
+    <div class="inner" style="text-align:center;">
+      <span class="s-label">Stay in the loop</span>
+      <h2 class="s-title">Be the first to know when the app launches</h2>
+      <div class="gold-line centered"></div>
+      <p class="s-body">Subscribe to receive a notification when Ibi Pax is available on the App Store and Google Play.</p>
+      <form action="https://ibipax.us13.list-manage.com/subscribe/post?u=0f8370bc0c41ac3095161a435&amp;id=12190adb20&amp;f_id=000a00e9f0" method="post" class="subscribe-form" target="_blank">
+        <input type="email" name="EMAIL" placeholder="Enter your email address" required />
+        <!-- Bot signup protection -->
+        <div style="position:absolute;left:-5000px;" aria-hidden="true">
+          <input type="text" name="b_0f8370bc0c41ac3095161a435_12190adb20" tabindex="-1" value="">
+        </div>
+        <button type="submit">Notify Me</button>
+      </form>
+      <p class="subscribe-msg"></p>
     </div>
   </section>
 
