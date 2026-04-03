@@ -359,7 +359,14 @@
       <p>If you have any questions, requests, or concerns about this Privacy Policy or how we handle your data, please reach out to us:</p>
       <div class="contact-block">
         <p><strong>Ibi Pax</strong></p>
-        <p style="margin-top:0.75rem;">Email: <a href="mailto:contact@ibipax.com">contact@ibipax.com</a></p>
+        <p style="margin-top:0.75rem;">Email: <span id="contact-email"></span></p>
+        <script>
+          (function() {
+            var e = 'contact' + '@' + 'ibipax.com';
+            var s = document.getElementById('contact-email');
+            s.innerHTML = '<a href="mailto:' + e + '">' + e + '</a>';
+          })();
+        </script>
       </div>
     </div>
 
