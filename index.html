@@ -37,7 +37,10 @@
       outline-offset: 4px;
     }
 
-    html { scroll-behavior: smooth; }
+    html { 
+      scroll-behavior: smooth; 
+      overflow-x: hidden;
+    }
 
     body {
       font-family: 'Inter', system-ui, sans-serif;
@@ -133,6 +136,7 @@
       min-height: 100vh;
       display: flex; align-items: center; justify-content: center; flex-direction: column;
       text-align: center; padding: 6rem 2rem 5rem; position: relative;
+      overflow: hidden;
     }
     .hero-cross { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -52%); pointer-events: none; z-index: 1; }
     .cross-h {
@@ -225,7 +229,7 @@
     }
 
     /* ─── SECTION SHELL ─── */
-    section { padding: 7rem 2rem; position: relative; }
+    section { padding: 7rem 2rem; position: relative; overflow: hidden; }
     .inner { max-width: 1100px; margin: 0 auto; }
 
     .s-label {
