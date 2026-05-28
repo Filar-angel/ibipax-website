@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#05070a"/>
+  <title>Delete Your Account — Ibi Pax</title>
+  <meta name="description" content="How to delete your Ibi Pax account and personal data."/>
+  <link rel="icon" href="icon final 2.png" type="image/png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --void:    #05070a;
+      --gold:    #d4af37;
+      --gold-s:  rgba(212,175,55,0.5);
+      --gold-xs: rgba(212,175,55,0.15);
+      --text:    rgba(255,255,255,0.92);
+      --muted:   rgba(255,255,255,0.55);
+      --dim:     rgba(255,255,255,0.25);
+      --stroke:  rgba(255,255,255,0.08);
+      --panel:   rgba(255,255,255,0.04);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--void);
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    /* Background */
+    .bg-photo {
+      position: fixed; inset: 0; z-index: -2;
+      background: url('milkyway_bg.png') center center / cover no-repeat;
+    }
+    .bg-overlay {
+      position: fixed; inset: 0; z-index: -1;
+      background: rgba(5,7,10,0.82);
+    }
+
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--void); }
+    ::-webkit-scrollbar-thumb { background: var(--gold-xs); border-radius: 2px; }
+
+    /* Nav */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: rgba(5,7,10,0.90);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--stroke);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem; font-weight: 700;
+      letter-spacing: 0.1em; color: var(--text); text-decoration: none;
+    }
+    .nav-logo .pax { font-style: italic; color: var(--gold); }
+    .nav-back {
+      font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none; transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--gold); }
+
+    /* Page layout */
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 9rem 2rem 6rem;
+    }
+
+    /* Header */
+    .page-eyebrow {
+      display: block;
+      font-size: 0.70rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1rem;
+    }
+    .page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 400; line-height: 1.2;
+      color: var(--text); margin-bottom: 0.75rem;
+    }
+    .page-meta {
+      font-size: 0.80rem; color: var(--muted);
+      letter-spacing: 0.05em; margin-bottom: 3rem;
+    }
+    .gold-rule {
+      width: 40px; height: 1px;
+      background: var(--gold-s); margin-bottom: 3rem;
+    }
+
+    /* Sections */
+    .policy-section {
+      background: var(--panel);
+      border: 1px solid var(--stroke);
+      border-radius: 14px;
+      padding: 2rem 2.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem; font-weight: 400;
+      color: var(--text); margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--stroke);
+    }
+
+    h3 {
+      font-size: 0.88rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--gold); margin: 1.5rem 0 0.5rem;
+    }
+    h3:first-of-type { margin-top: 0.5rem; }
+
+    p {
+      font-size: 0.94rem; color: var(--muted);
+      margin-bottom: 0.85rem; line-height: 1.85;
+    }
+    p:last-child { margin-bottom: 0; }
+
+    ul, ol {
+      margin: 0.5rem 0 0.85rem 1.25rem;
+      color: var(--muted); font-size: 0.94rem;
+    }
+    ul li, ol li { margin-bottom: 0.6rem; line-height: 1.75; }
+
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    strong { color: var(--text); font-weight: 500; }
+
+    /* Highlight box */
+    .highlight {
+      background: var(--gold-xs);
+      border-left: 2px solid var(--gold-s);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      font-size: 0.90rem;
+      color: rgba(255,255,255,0.70);
+      line-height: 1.75;
+    }
+
+    /* Steps list */
+    .steps {
+      counter-reset: step;
+      list-style: none;
+      margin-left: 0;
+    }
+    .steps li {
+      position: relative;
+      padding-left: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .steps li::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0; top: 0.1rem;
+      width: 1.6rem; height: 1.6rem;
+      background: var(--gold-xs);
+      border: 1px solid var(--gold-s);
+      border-radius: 50%;
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Contact block */
+    .contact-block {
+      background: var(--gold-xs);
+      border: 1px solid var(--gold-s);
+      border-radius: 14px;
+      padding: 1.75rem 2.25rem;
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+    .contact-block p { color: rgba(255,255,255,0.65); margin-bottom: 0.4rem; }
+    .contact-block a { color: var(--gold); font-size: 1rem; font-weight: 500; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      border-top: 1px solid var(--stroke);
+      margin-top: 3rem;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem; font-weight: 700;
+      letter-spacing: 0.1em; color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    .footer-logo .pax { font-style: italic; color: var(--gold); }
+    .footer-copy { font-size: 0.75rem; color: var(--dim); margin-top: 1rem; }
+
+    @media (max-width: 600px) {
+      nav { padding: 1rem 1.5rem; }
+      .policy-section { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-photo" aria-hidden="true"></div>
+  <div class="bg-overlay" aria-hidden="true"></div>
+
+  <nav>
+    <a class="nav-logo" href="index.html">Ibi <span class="pax">Pax</span></a>
+    <a class="nav-back" href="index.html">&larr; Back to Home</a>
+  </nav>
+
+  <main class="page">
+
+    <span class="page-eyebrow">Account</span>
+    <h1 class="page-title">Delete Your Account</h1>
+    <p class="page-meta">Effective Date: May 28, 2026</p>
+    <div class="gold-rule"></div>
+
+    <div class="highlight">
+      You can permanently delete your Ibi Pax account and personal data at any time. Deletion is irreversible &mdash; once your account is removed, your data cannot be restored.
+    </div>
+
+    <!-- 1. In-app deletion -->
+    <div class="policy-section">
+      <h2>1. Delete From Within the App (Recommended)</h2>
+      <p>
+        The fastest way to delete your account is directly from the Ibi Pax app on your device:
+      </p>
+      <ol class="steps">
+        <li>Open the <strong>Ibi Pax</strong> app and sign in to the account you wish to delete.</li>
+        <li>Go to <strong>Settings</strong> (the gear icon).</li>
+        <li>Scroll down and tap <strong>Delete Account</strong>.</li>
+        <li>Type <strong>DELETE</strong> to confirm, then tap <strong>Delete</strong>.</li>
+        <li>You will be signed out, and your account will be permanently removed.</li>
+      </ol>
+      <p>
+        Account deletion completes immediately. You will receive no further communications from us, and your data will be removed from our active systems within the timeframes described below.
+      </p>
+    </div>
+
+    <!-- 2. Email request -->
+    <div class="policy-section">
+      <h2>2. Request Deletion by Email</h2>
+      <p>
+        If you can no longer access the app (for example, you have uninstalled it or lost access to your device), you can request account deletion by emailing us:
+      </p>
+      <div class="contact-block">
+        <p><strong>Send an email to</strong></p>
+        <p style="margin-top:0.75rem;"><span id="contact-email"></span></p>
+        <script>
+          (function() {
+            var e = 'contact' + '@' + 'ibipax.com';
+            var s = document.getElementById('contact-email');
+            s.innerHTML = '<a href="mailto:' + e + '?subject=Account%20Deletion%20Request">' + e + '</a>';
+          })();
+        </script>
+      </div>
+      <p style="margin-top:1.25rem;">
+        Use the subject line <strong>"Account Deletion Request"</strong> and include:
+      </p>
+      <ul>
+        <li>The <strong>email address</strong> associated with your Ibi Pax account.</li>
+        <li>A short statement confirming you wish to permanently delete your account.</li>
+      </ul>
+      <p>
+        For security, we will reply to verify the request from the account's registered email address before proceeding. We will complete the deletion within <strong>30 days</strong> of verification.
+      </p>
+    </div>
+
+    <!-- 3. What gets deleted -->
+    <div class="policy-section">
+      <h2>3. What Gets Deleted</h2>
+      <p>When your account is deleted, the following data is permanently removed:</p>
+      <ul>
+        <li>Your account record (email address, encrypted password, account identifier).</li>
+        <li>Your profile information (display name, preferences).</li>
+        <li>Your in-app activity tied to your account (favorites, reading progress, settings synced to your account).</li>
+        <li>Your push notification token, if previously stored.</li>
+      </ul>
+    </div>
+
+    <!-- 4. What may be retained -->
+    <div class="policy-section">
+      <h2>4. What May Be Retained</h2>
+      <p>
+        We may retain a limited subset of information after account deletion, only as strictly necessary:
+      </p>
+      <ul>
+        <li><strong>Anonymous usage and crash data</strong> (already disassociated from your account) may be retained for up to 24 months for analytics and product improvement.</li>
+        <li><strong>Transaction records</strong> required by tax, accounting, or consumer-protection laws &mdash; we do not store your payment details (these are held by Apple or Google), but we may retain a record that a purchase occurred and was associated with a former account, where required by law.</li>
+        <li><strong>Support correspondence</strong> may be retained for a limited period to handle disputes or comply with legal obligations.</li>
+      </ul>
+      <p>
+        Any retained information is held in accordance with our <a href="privacy-policy.html">Privacy Policy</a> and applicable law.
+      </p>
+    </div>
+
+    <!-- 5. Subscriptions -->
+    <div class="policy-section">
+      <h2>5. Active Subscriptions</h2>
+      <p>
+        Deleting your Ibi Pax account does <strong>not</strong> automatically cancel any active subscription. Subscriptions are managed by the platform where they were purchased:
+      </p>
+      <ul>
+        <li><strong>Google Play subscriptions</strong> &mdash; cancel from the Google Play app: <em>Profile &rarr; Payments &amp; subscriptions &rarr; Subscriptions &rarr; Ibi Pax &rarr; Cancel subscription.</em></li>
+        <li><strong>Apple App Store subscriptions</strong> &mdash; cancel from <em>Settings &rarr; [your name] &rarr; Subscriptions &rarr; Ibi Pax &rarr; Cancel Subscription.</em></li>
+      </ul>
+      <p>
+        We recommend cancelling any active subscription <em>before</em> deleting your account so you are not charged for a future renewal you cannot use.
+      </p>
+    </div>
+
+    <!-- 6. Reinstating -->
+    <div class="policy-section">
+      <h2>6. Can I Reinstate a Deleted Account?</h2>
+      <p>
+        No. Account deletion is <strong>permanent and irreversible</strong>. If you wish to use Ibi Pax again in the future, you will need to create a new account; previous data, history, and preferences cannot be recovered.
+      </p>
+    </div>
+
+    <!-- 7. Questions -->
+    <div class="policy-section">
+      <h2>7. Questions</h2>
+      <p>
+        If you have any questions about deleting your account or about how we handle your data more generally, please review our <a href="privacy-policy.html">Privacy Policy</a> or contact us:
+      </p>
+      <div class="contact-block">
+        <p><strong>Ibi Pax</strong></p>
+        <p style="margin-top:0.75rem;">Email: <span id="contact-email-2"></span></p>
+        <script>
+          (function() {
+            var e = 'contact' + '@' + 'ibipax.com';
+            var s = document.getElementById('contact-email-2');
+            s.innerHTML = '<a href="mailto:' + e + '">' + e + '</a>';
+          })();
+        </script>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-logo">Ibi <span class="pax">Pax</span></div>
+    <p class="footer-copy">&copy; 2026 Ibi Pax Ltd. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
