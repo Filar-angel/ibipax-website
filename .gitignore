@@ -19,3 +19,12 @@ yarn-error.log*
 .env
 .env.local
 .dev.vars
+
+# Local Google Play / store header assets (kept out of the repo)
+play-assets/
+google-play-header.html
+google-play-header*.png
+google-play-header*.jpg
+ibipax-play-header.png
+ibipax-play-header.jpg
+ibi_pax_header_rendered.png
