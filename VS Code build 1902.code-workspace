@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "../../../../../Ascension build/VS Code build 1902"
+		},
+		{
+			"path": "../../../Restoration Simulator/Restoration Simulator build"
 		}
 	],
 	"settings": {
