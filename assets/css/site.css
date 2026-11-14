@@ -474,6 +474,10 @@ ul, ol { padding: 0; }
 .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 40px; }
 .footer-brand .brand { font-size: 30px; }
 .footer-brand p { margin-top: 12px; max-width: 280px; font-size: 15px; line-height: 1.6; color: var(--dim); }
+.social { list-style: none; display: flex; gap: 12px; margin: 22px 0 0; }
+.social__link { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(244, 234, 210, 0.38); transition: border-color .2s ease, background-color .2s ease; }
+.social__link:hover, .social__link:focus-visible { border-color: var(--gold); background-color: rgba(217, 164, 65, 0.1); }
+.social__link img { display: block; }
 .footer-col h2 { margin: 0 0 14px; font-family: var(--font-text); font-weight: 400; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
 .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 16px; }
 .footer-col a { color: var(--muted); text-decoration: none; }
